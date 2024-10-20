@@ -1,0 +1,32 @@
+[
+    {
+        "name": "John Doe",
+        "age": 29,
+        "secretIdentity": "Thunderstorm",
+        "powers": [
+            "Super strength",
+            "Flight",
+            "Electricity manipulation"
+        ]
+    },
+    {
+        "name": "Jane Smith",
+        "age": 34,
+        "secretIdentity": "Shadow Walker",
+        "powers": [
+            "Invisibility",
+            "Teleportation",
+            "Wall climbing"
+        ]
+    },
+    {
+        "name": "Sam Johnson",
+        "age": 22,
+        "secretIdentity": "Firebird",
+        "powers": [
+            "Fire manipulation",
+            "Heat resistance",
+            "Flight"
+        ]
+    }
+]
