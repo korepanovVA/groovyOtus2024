@@ -1,0 +1,47 @@
+plugins {
+    id 'groovy'
+    id 'java-gradle-plugin'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    testImplementation 'org.spockframework:spock-core:2.1-groovy-3.0'
+    testImplementation gradleTestKit()
+}
+
+gradlePlugin {
+    plugins {
+        codegenPlugin {
+            id = 'codegen.codegen'
+            implementationClass = 'codegen.CodegenPlugin'
+        }
+    }
+}
+
+
+apply plugin: 'codegen.codegen'
+
+
+codegen {
+    fieldValue = "Hello, Generated World!" // Значение поля
+    className = "HelloWorld" // Название класса
+    outputDir = file("$buildDir/generated/sources") // Директория для генерации
+    packageName = "com.example.generated" // Пакет для сгенерированного класса
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir "$buildDir/generated/sources" // Добавляем сгенерированные источники в sourceSet
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
